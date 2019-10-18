@@ -5,7 +5,7 @@ import torch.nn.functional as F
 from torch.nn import Parameter
 import math
 
-def myphi(x,m):
+def myphi(x,m): //cos的泰勒展开，为了梯度反向传播
     x = x * m
     return 1-x**2/math.factorial(2)+x**4/math.factorial(4)-x**6/math.factorial(6) + \
             x**8/math.factorial(8) - x**9/math.factorial(9)
